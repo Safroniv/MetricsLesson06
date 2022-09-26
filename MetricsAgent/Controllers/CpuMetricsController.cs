@@ -81,34 +81,34 @@ namespace MetricsAgent.Controllers
 
             // Вариант 3 (AutoMapper)
 
-            Random random = new Random();
-            switch (random.Next(2))
-            {
-                case 0:
+            //Random random = new Random();
+            //switch (random.Next(2))
+            //{
+            //    case 0:
                     return Ok(new GetCpuMetricsResponse
                     {
                         Metrics = _cpuMetricsRepository.GetByTimePeriod(fromTime, toTime)
                         .Select(metric => _mapper.Map<CpuMetricDto>(metric)).ToList()
                     });
-                case 1:
-                    throw new Exception("Internal Server Error.");
-            }
-            throw new Exception("Internal Server Error.");
+            //    case 1:
+            //        throw new Exception("Internal Server Error.");
+            //}
+            //throw new Exception("Internal Server Error.");
         }
 
         [HttpGet("all")]
         public ActionResult<IList<CpuMetricDto>> GetAllCpuMetrics()
         {
-            Random random = new Random();
-            switch (random.Next(2))
-            {
-                case 0:
+            //Random random = new Random();
+            //switch (random.Next(2))
+            //{
+            //    case 0:
                     return Ok(_cpuMetricsRepository.GetAll()
                     .Select(metric => _mapper.Map<CpuMetricDto>(metric)).ToList());
-                case 1:
-                    throw new Exception("Internal Server Error.");
-            }
-            throw new Exception("Internal Server Error.");
+            //    case 1:
+            //        throw new Exception("Internal Server Error.");
+            //}
+            //throw new Exception("Internal Server Error.");
         }
 
         // TODO: Домашнее задание [Пункт 2]
