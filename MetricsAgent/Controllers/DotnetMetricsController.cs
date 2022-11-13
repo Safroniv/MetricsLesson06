@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace MetricsAgent.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/dotnet")]
     [ApiController]
     public class DotnetMetricsController : ControllerBase
     {

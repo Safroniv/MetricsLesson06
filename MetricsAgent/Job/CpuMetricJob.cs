@@ -22,11 +22,8 @@ namespace MetricsAgent.Job
              
              */
         }
-
-
         public Task Execute(IJobExecutionContext context)
         {
-
             using (IServiceScope serviceScope = _serviceScopeFactory.CreateScope())
             {
                 var cpuMetricsRepository = serviceScope.ServiceProvider.GetService<ICpuMetricsRepository>();
@@ -42,12 +39,8 @@ namespace MetricsAgent.Job
                     });
                 }
                 catch (Exception ex)
-                {
-
-                }
+                {}
             }
-               
-
             return Task.CompletedTask;
         }
     }

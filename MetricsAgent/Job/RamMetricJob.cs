@@ -15,18 +15,9 @@ namespace MetricsAgent.Job
         {
             _serviceScopeFactory = serviceScopeFactory;
             _ramCounter = new PerformanceCounter("Memory", "% Committed Bytes In Use");
-            /*
-             
-                         _cpuCounter = new PerformanceCounter(".NET CLR Memory", "# Bytes in all heaps", "_Global_");
-            _cpuCounter = new PerformanceCounter(".NET CLR Exceptions", "# of Exceps Thrown / sec", "_Global_");
-             
-             */
         }
-
-
         public Task Execute(IJobExecutionContext context)
         {
-
             using (IServiceScope serviceScope = _serviceScopeFactory.CreateScope())
             {
                 var ramMetricsRepository = serviceScope.ServiceProvider.GetService<IRamMetricsRepository>();
@@ -42,12 +33,8 @@ namespace MetricsAgent.Job
                     });
                 }
                 catch (Exception ex)
-                {
-
-                }
+                {}
             }
-               
-
             return Task.CompletedTask;
         }
     }

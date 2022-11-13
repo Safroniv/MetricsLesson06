@@ -47,7 +47,7 @@ namespace MetricsManager
             builder.Services.AddHttpClient();
             
             
-            builder.Services.AddHttpClient<IMetricsAgentClient, MetricsAgentClient>()
+            builder.Services.AddHttpClient<IMetricsAgentClientCpu, MetricsAgentClientCpu>()
                 .AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(retryCount: 3,
                 sleepDurationProvider: (attemptCount) => TimeSpan.FromSeconds(attemptCount * 2),
                 onRetry: (response, sleepDuration, attemptCount, context) => {
