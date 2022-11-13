@@ -2,7 +2,7 @@
 
 namespace MetricsManager.Services.Client
 {
-    public interface IMetricsAgentClient
+    public interface IMetricsAgentClientCpu
     {
         CpuMetricsResponse GetCpuMetrics(CpuMetricsRequest request);
     }

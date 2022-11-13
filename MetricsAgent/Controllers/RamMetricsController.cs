@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace MetricsAgent.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/ram")]
     [ApiController]
     public class RamMetricsController : ControllerBase
     {

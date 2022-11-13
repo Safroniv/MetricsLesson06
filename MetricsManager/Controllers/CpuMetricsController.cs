@@ -18,13 +18,13 @@ namespace MetricsManager.Controllers
 
         private IHttpClientFactory _httpClientFactory;
         private AgentPool _agentPool;
-        private IMetricsAgentClient _metricsAgentClient;
+        private IMetricsAgentClientCpu _metricsAgentClient;
 
         #endregion
 
 
         public CpuMetricsController(
-            IMetricsAgentClient metricsAgentClient,
+            IMetricsAgentClientCpu metricsAgentClient,
             IHttpClientFactory httpClientFactory,
             AgentPool agentPool)
         {
